@@ -1,0 +1,142 @@
+ Albinos 1.0.0
+
+Albinos is a command-line tool designed to check formulas in a three-valued logic using a SAT solver. It provides various options to perform different operations on the formulas and display the results.
+
+Usage
+
+To run Albinos, use the following command:
+
+./albinos  [formula_args] [options]
+
+Positional Arguments
+
+- `formula_args`: Formula sequence to be checked.
+
+Options
+
+- `-h, --help`: Shows the help message and exits.
+
+- `-f [FORMULA], --formula [FORMULA]`: Specifies a formula sequence.
+
+- `-l LOGIC, --logic LOGIC`: Specifies the logic name.
+
+- `-v VALUE, --value VALUE`: Specifies the expected result value.
+
+- `-s, --save`: Saves all information to a file.
+
+- `-t, --tree`: Prints the tree representation of the formula.
+
+- `-c, --clause`: Prints all clauses.
+
+- `-r, --result`: Prints the result valuation.
+
+- `-a, --all`: Prints all information.
+
+
+Examples
+
+Here are a few examples to demonstrate how to use Albinos:
+1. Check a formula using the default options:
+./albinos  “p OR q AND r”
+
+2. Check a formula and save the information to a file:
+./albinos  “p OR q AND r” -s
+
+3. Check a formula, display the tree representation, and print the result valuation:
+./albinos  “p OR q AND r” -t -r
+
+4. Check a formula with a specific logic and expected result:
+./albinos  “p OR q AND r” -l Lukasiewicz -v T
+
+Example usage with result:
+./albinos  “a or ~ a or ( ( a or ~ a) => ( a and ~a ) )” -v F -t 
+
+Result:
+Expected result: F
+Formula:
+
+a or ~ a or ( ( a or ~ a ) => ( a and ~ a ) )
+
+Logic: Lukasiewicz
+
+Valuation:
+None
+CPU time: 0.003258105000000011
+Elapsed time: 0.003555774688720703
+
+Formula Tree:
+1 : a
+2 : a
+3 :  ~  a
+4 :  ~  a
+5 :  a  and  ~  a
+6 :  a  and  ~  a
+7 :  ~  a
+8 :  ~  a
+9 :  a  or  ~  a
+10 :  a  or  ~  a
+11 :  a  or  ~  a  =>  a  and  ~  a
+12 :  a  or  ~  a  =>  a  and  ~  a
+13 :  ~  a
+14 :  ~  a
+15 :  ~  a  or  a  or  ~  a  =>  a  and  ~  a
+16 :  ~  a  or  a  or  ~  a  =>  a  and  ~  a
+17 :  a  or  ~  a  or  a  or  ~  a  =>  a  and  ~  a
+18 :  a  or  ~  a  or  a  or  ~  a  =>  a  and  ~  a
+Example usage with result:
+./albinos  “a or ~ a or ( ( a or ~ a) => ( a and ~a ) )” -v T -t  -r
+
+
+Expected result: T
+Formula:
+a or ~ a or ( ( a or ~ a ) => ( a and ~ a ) )
+
+Logic: Lukasiewicz
+
+Valuation:
+a : T
+
+CPU time: 0.001274624000000002
+Elapsed time: 0.0012731552124023438
+
+
+Formula Tree:
+1 : a
+2 : a
+3 :  ~  a
+4 :  ~  a
+5 :  a  and  ~  a
+6 :  a  and  ~  a
+7 :  ~  a
+8 :  ~  a
+9 :  a  or  ~  a
+10 :  a  or  ~  a
+11 :  a  or  ~  a  =>  a  and  ~  a
+12 :  a  or  ~  a  =>  a  and  ~  a
+13 :  ~  a
+14 :  ~  a
+15 :  ~  a  or  a  or  ~  a  =>  a  and  ~  a
+16 :  ~  a  or  a  or  ~  a  =>  a  and  ~  a
+17 :  a  or  ~  a  or  a  or  ~  a  =>  a  and  ~  a
+18 :  a  or  ~  a  or  a  or  ~  a  =>  a  and  ~  a
+
+
+
+SatSolver Valuation:
+[1, 2, -3, -4, -5, -6, -7, -8, 9, 10, 11, 12, -13, -14, 15, 16, 17, 18]
+
+
+ Contributing
+
+If you'd like to contribute to Albinos, please fork the repository and submit a pull request. We welcome any enhancements, bug fixes, or new features.
+
+ License
+
+Albinos is licensed under the GNU General Public License. See the [LICENSE] file for more details.
+
+Contact
+
+For any questions or feedback, please reach out to the project maintainer at example@example.com.
+
+That should provide a comprehensive overview of your application, its usage, options, and how to contribute. Feel free to customize it according to your specific project details.
+
