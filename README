@@ -1,4 +1,4 @@
- Albinos 1.0.0
+  Albinos 1.0.0
 
 Albinos is a command-line tool designed to check formulas in a three-valued logic using a SAT solver. It provides various options to perform different operations on the formulas and display the results.
 
@@ -129,7 +129,7 @@ SatSolver Valuation:
  Contributing
 
 If you'd like to contribute to Albinos, please fork the repository and submit a pull request. We welcome any enhancements, bug fixes, or new features.
-
+BTW albinos use Python 3.11.
  License
 
 Albinos is licensed under the GNU General Public License. See the [LICENSE] file for more details.
