@@ -51,6 +51,7 @@ class AlbinosSolver:
         else:
             number=self.variable_dict[root][0]
         return number
+        
     def solve_level(self,root:TreeNode):
         if root.right== None and root.right==None:
             number=self.getRootNumber(root)
@@ -79,6 +80,7 @@ class AlbinosSolver:
         res = []
         [res.append(x) for x in self.clauses_list if x not in res] 
         return res
+
     def addSearchResult(self,result,ExpectedResult):
         if(ExpectedResult==None) or not ExpectedResult in ['T','U','F']:
             ExpectedResult='T'
