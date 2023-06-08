@@ -132,7 +132,7 @@ def getTestArgs(args):
     args.tree=True
     return args
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Albinos 0.0.1')
+    parser = argparse.ArgumentParser(description='Albinos 1.0.0. GNU General Public License')
     parser.add_argument("formula_args", nargs='?', help="Formula sequence")
     parser.add_argument("-f", "--formula", nargs='?', const='',help="Formula sequence")
     parser.add_argument("-l", "--logic",default=DEFAULT_LOGIC, help="Logic name")
